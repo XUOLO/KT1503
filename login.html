@@ -1,9 +1,9 @@
-<form>
+<form id="loginForm">
   <div class="form-outline mb-4">
     <input
       type="text"
       name="txtUserName"
-      id="form2Example2"
+      id="form2Example1"
       class="form-control"
     />
     <label class="form-label" for="form2Example2">Tên Đăng nhập</label>
@@ -18,7 +18,24 @@
     />
     <label class="form-label" for="form2Example2">Mật khẩu</label>
   </div>
-  <button type="button" class="btn btn-primary btn-block mb-4">
+  <button type="button" class="btn btn-primary btn-block mb-4" onclick="login()">
     Đăng nhập
   </button>
+
 </form>
+<script>
+  function login() {
+    // Get username and password values
+    var username = document.getElementById('form2Example1').value;
+    var password = document.getElementById('form2Example2').value;
+
+    // Check if username and password are correct
+    if (username === 'admin' && password === 'admin') {
+      // Redirect to success page
+      window.location.href = 'success.html';
+    } else {
+      // Display error message or handle incorrect credentials
+      alert('Tên đăng nhập hoặc mật khẩu không chính xác');
+    }
+  }
+</script>
